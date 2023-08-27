@@ -1,0 +1,4 @@
+*.log
+vcf-env
+files
+PyWhatKit_DB.txt
