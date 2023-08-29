@@ -104,7 +104,7 @@ and dm your name for save back
             actual_Number(actualNo, whole_num, main_numbers,
                           container_numbers, msg_data)
 
-        elif not con_tact.startswith('BEGIN') and not con_tact.startswith('VERSION') and not con_tact.startswith('N') and not con_tact.startswith('FN') and not con_tact.startswith('TEL') and not con_tact.startswith('END') and not con_tact.startswith('ORG'):
+        elif not con_tact.startswith('BEGIN') and not con_tact.startswith('VERSION') and not con_tact.startswith('N') and not con_tact.startswith('FN') and not con_tact.startswith('TEL') and not con_tact.startswith('END') and not con_tact.startswith('ORG') and not con_tact.startswith('=') and not con_tact.startswith(''):
             spitNum = con_tact.strip().split(",")
             for onum in spitNum:
                 whole_num = str(onum).replace("-", "").replace(" ",
