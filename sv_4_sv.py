@@ -14,8 +14,10 @@ def actual_Number(actualNo: int, whole_num: str, main_numbers: any, container_nu
         if actualNo not in container_numbers:
             try:
                 toSendNo = whole_num
-                if whole_num[0:2] == "07" or whole_num[0:2] == "01":
-                    toSendNo = "+254" + whole_num[-9:]
+                if whole_num[0] == "0":
+                    with open("nocode.log", 'a') as nocode_file:
+                        nocode_file.write(str(whole_num)+"\n")
+                    return
 
                 pywhatkit.sendwhatmsg_instantly(phone_no=str(
                     toSendNo), message=msg_data, tab_close=False)
@@ -82,7 +84,8 @@ try:
 
         if con_tact.startswith('TEL;'):
             spitNum = con_tact.strip().split(":")
-            whole_num = str(spitNum[1]).replace("-", "").replace(" ", "").replace("(", "").replace(")", "")
+            whole_num = str(spitNum[1]).replace(
+                "-", "").replace(" ", "").replace("(", "").replace(")", "")
             if not re.match(number_regex, whole_num) or len(whole_num) < 9:
                 continue
             actualNo = int(whole_num[-9:])
@@ -111,10 +114,11 @@ and dm your name for save back
         elif not con_tact.startswith('BEGIN') and not con_tact.startswith('VERSION') and not con_tact.startswith('N') and not con_tact.startswith('FN') and not con_tact.startswith('TEL') and not con_tact.startswith('END') and not con_tact.startswith('ORG') and not con_tact.startswith('=') and not con_tact.startswith(''):
             spitNum = con_tact.strip().split(",")
             for onum in spitNum:
-                whole_num = str(onum).replace("-", "").replace(" ","").replace("(", "").replace(")", "")
+                whole_num = str(onum).replace(
+                    "-", "").replace(" ", "").replace("(", "").replace(")", "")
                 if not re.match(number_regex, whole_num) or len(whole_num) < 9:
                     continue
-         		
+
                 actualNo = int(whole_num[-9:])
 
                 msg_data = """
