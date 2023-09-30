@@ -22,6 +22,8 @@
 
 ### Installation
 
+#### download and extract code
+
 #### python3 -m venv vcf-env
 
 #### source vcf-env/bin/activate
@@ -42,3 +44,4 @@
 ## Kelvinification
 ### save for save
 #### https://github.com/kevinification/save-for-save-bot.git
+### Version 5.0

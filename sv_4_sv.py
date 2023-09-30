@@ -57,6 +57,9 @@ try:
     compare_file = open(sys.argv[2], 'r')
     keyboard = Controller()
 
+    print("[-] Press Ctrl + C to stop script")
+    print("[-] https://github.com/kevinification/save-for-save-bot")
+
     msg_data = ""
 
     if (os.path.isfile("container.log")):
